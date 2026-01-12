@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>麋鹿性癖好测试 / Elk Preference Test</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="lang-switch">
+                <button onclick="setLanguage('zh')" class="active">中文</button>
+                <button onclick="setLanguage('en')">English</button>
+            </div>
+            <h1 id="page-title">多元性癖好倾向测试</h1>
+            <p id="page-subtitle">探索你内心深处的欲望构成</p>
+        </header>
+
+        <div id="welcome-screen" class="card fade-in">
+            <div class="intro-text">
+                <p id="intro-desc">本测试包含多道选择题，将从22个维度分析您的倾向。请根据直觉诚实回答。</p>
+                <p class="warning">⚠️ <span id="warning-text">内容涉及成人向话题，仅供18岁以上成人自我探索使用。</span></p>
+            </div>
+            <button class="btn-primary" onclick="startTest()" id="start-btn">开始测试</button>
+        </div>
+
+ <div id="quiz-screen" class="card hidden">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress"></div>
+            </div>
+            <div class="question-box">
+                <h2 id="question-text">问题加载中...</h2>
+                <div id="options-container" class="options-grid">
+                    </div>
+                
+                <div class="quiz-controls">
+                    <button id="prev-btn" class="btn-text" onclick="prevQuestion()" style="display:none;">
+                        ← 上一题 (Previous)
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="result-screen" class="hidden">
+            <div class="card">
+                <canvas id="radarChart"></canvas>
+            </div>
+            
+            <div id="result-details">
+                </div>
+            
+            <button class="btn-secondary" onclick="restartTest()" id="restart-btn">重新测试</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
